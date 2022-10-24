@@ -24,7 +24,7 @@ function NavBar() {
                             }
                         >Shop</NavLink>
                         <NavLink
-                            to='/shop'
+                            to='/contact'
                             className='linkItems'
                             style={ ({ isActive }) =>
                                 isActive ? { color: "white" } : undefined

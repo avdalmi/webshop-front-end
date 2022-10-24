@@ -1,13 +1,12 @@
 import React from 'react';
 import "./styles.css";
+import Banner from '/Users/Akiko_1/Desktop/frontend/src/components/Banner';
+
 
 function Homepage() {
     return (
         <>
-            <div className='banner'>
-                <h3 className='bannerText'>Products for every need, <br />
-                    at the distance of  click</h3>
-            </div>
+            <Banner />
         </>
     );
 }

@@ -1,0 +1,12 @@
+.banner {
+    background-color:#8568ff;
+    height: 300px;
+    display: flex;
+    align-items: center;
+
+}
+
+.bannerText {
+    color: white;
+    margin-left: 20%;
+}
