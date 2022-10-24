@@ -10,7 +10,7 @@ function NavBar() {
                 <div className='links'>
                     <div className='linkItems'>
                         <NavLink
-                            to='/home'
+                            to='/'
                             className='linkItems'
                             style={ ({ isActive }) =>
                                 isActive ? { color: "white" } : undefined

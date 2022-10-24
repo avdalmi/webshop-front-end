@@ -1,0 +1,24 @@
+.footer {
+    background-color: #8568ff;
+    display: flex;
+    color: #ffffff;
+    width: 100%;
+    justify-content: flex-end;
+    font-size: 16px;;
+}
+
+.categories {
+    padding: 5px;
+    margin: 30px;
+}
+
+.account {
+    padding: 5px;
+    margin: 30px;
+}
+
+.socials {
+    padding: 5px;
+    margin: 30px;
+    padding-right: 70px;
+}
