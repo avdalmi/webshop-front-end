@@ -1,9 +1,9 @@
 import React from 'react';
 import "./styles.css";
+import Banner from '../../components/Banner';
 import ProductCard from '../../components/ProductCard';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-
 
 
 function Homepage() {
