@@ -17,20 +17,23 @@ function App() {
         <Route path="/shop" element={ <Shop /> } />
         <Route path="/details/:id/*" element={ <DetailsPage /> } />
         <Route path="/contact" element={ <ContactPage /> } />
+
       </Routes>
       <br />
       <br />
       <br />
       <br />
-      <br /><br />
       <br />
       <br />
       <br />
-      <br /><br />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
 
-      <Footer />
+      {/* <Footer /> */ }
     </>
   );
 }
