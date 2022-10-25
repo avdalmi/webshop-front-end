@@ -33,7 +33,6 @@ function Shop() {
     }, [categories]);
 
     const handleFilter = (p, e) => {
-        console.log(filterSettings);
         const newSettings = filterSettings.map((i) => {
             if (i.id === p.id) {
                 return { ...i, filtered: e };
@@ -87,7 +86,6 @@ function Shop() {
             const filterState = filterSettings.find((i) => {
                 if (i.id === data.categoryId) return true;
             });
-            //console.log(`I: ${data.id} filterState: ${filterState}`);
             if (!filterState || filterState.filtered === false) return;
             return (
                 <ProductCard
