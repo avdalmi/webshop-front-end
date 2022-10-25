@@ -15,22 +15,25 @@ function App() {
       <Routes>
         <Route path="/" element={ <Homepage /> } />
         <Route path="/shop" element={ <Shop /> } />
-        <Route path="/details/:id" element={ <DetailsPage /> } />
+        <Route path="/details/:id/*" element={ <DetailsPage /> } />
         <Route path="/contact" element={ <ContactPage /> } />
+
       </Routes>
       <br />
       <br />
       <br />
       <br />
-      <br /><br />
       <br />
       <br />
       <br />
-      <br /><br />
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
 
-      <Footer />
+      {/* <Footer /> */ }
     </>
   );
 }
