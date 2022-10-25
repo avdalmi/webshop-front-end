@@ -1,25 +1,27 @@
-import React from 'react';
+import React from "react";
 import "./styles.css";
-
+import { Link } from "react-router-dom";
 
 function ProductCard(props) {
     return (
         <div>
-            < div className="mainContainer" key={ props.key } >
+            <div className="mainContainer" key={"mC" + props.id}>
+                <img className="img" src={props.mainImage} />
 
-                <img className="img" src={ props.mainImage } />
-
-                <div className="textContainer">
-                    <div className="title">{ props.title }Helo</div>
+                <div className="textContainer" key={"tC" + props.id}>
+                    <Link to={`../details/${props.id}`}>
+                        {" "}
+                        <div className="title">{props.title}</div>
+                    </Link>
                     <div className="textRatingContainter">
-                        <div className="price">€{ props.price }</div>
+                        <div className="price">€{props.price}</div>
                         <div className="rating">rate star</div>
                     </div>
 
-
-                    <div className="description">Description: { props.description }</div>
+                    <div className="description">
+                        Description: {props.description}
+                    </div>
                 </div>
-
 
                 {/* <div className="iconContainer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={ 1.5 } stroke="currentColor" className="w-6 h-6">
@@ -32,10 +34,9 @@ function ProductCard(props) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
                     </svg>
                 </div> */}
-            </ div>
+            </div>
         </div>
     );
-
 }
 
 export default ProductCard;
