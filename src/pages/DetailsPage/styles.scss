@@ -1,0 +1,150 @@
+
+.containerDes {
+    margin: 0 auto;
+    background-color: #ffffff;
+    display: flex;
+    max-width: 600px;
+}
+
+.description {
+    padding: 20px;
+}
+
+.photo {
+    padding:30px;
+    width: 35%;
+    max-height: 240px;
+    flex: 1;
+    align-self: center;
+}
+
+.title {
+    margin-top: 50px;
+    font-family: "lato";
+    font-weight: 800;
+    color: #0D134E;
+    font-size: 36px;
+}
+
+.reviews {
+    display: flex;
+    margin: 10px 0;
+
+    .rating{ 
+        margin-right:10px;
+    }
+
+    .reviewButton {
+        border-radius: 12px;
+        background-color: #ffffff;
+        color:#0D134E;
+        border-color: #0D134E;
+        font-family: "Lato";
+        font-size: 14px;
+    }
+}
+
+.reviewButton:active {
+    background-color: #0D134E;
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+    color: #ffffff;
+  }
+
+.price {
+    font-family: "Lato";
+    font-size: 16px;
+    color: #0D134E;
+}
+
+
+
+.buttons {
+    display: flex;
+    margin: 20px 0;
+
+    .cartButton {
+        display: flex;
+        background-color: #FF3EB2;
+        color: white;
+        margin-right: 10px;
+        border-radius: 12px;
+        border: none;
+        font-size: 16px;
+        align-items: center;
+        font-family: "Lato";
+    
+        
+
+    .cartIcon {
+        width: 20px;;
+        }
+
+    }
+
+    .favButton {
+        display: flex;
+        background-color: #ffffff;
+        color:#0D134E;
+        border-color: #0D134E;
+        font-size: 16px;
+        border-radius: 12px;
+        font-family: "Lato";
+
+    
+        .favIcon {
+            width: 20px;
+        }      
+    }
+    
+}
+.cartButton:active {
+    background-color: #0D134E;
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+  }
+
+.favButton:active {
+    background-color: #0D134E;
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+    color: #ffffff;
+  }
+
+.category {
+   margin: 0 auto;
+   font-family: "Lato";
+   font-size: 16px;
+   color: #0D134E;
+}
+
+.socialsShop {
+    display: flex;
+    margin: 10px 0; 
+    gap: 10px;
+
+
+    h4{
+        margin: 0;
+        font-size: 16px;
+        color: #0D134E;
+    }
+}
+
+.info {
+    background-color: #F9F8FE;
+    height: 300px;
+    padding: 40px;
+    color:#0D134E;
+    font-family: "Lato";
+    
+    .displayLinks {
+        margin-right: 40px;   
+    }
+}
+
+.displayLinks:link, .displayLinks:visited {
+    color:#0D134E;
+    font-family: "Lato";
+    text-decoration: underline;
+}
