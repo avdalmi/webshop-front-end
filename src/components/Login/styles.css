@@ -1,6 +1,4 @@
-body {
-    background-image: linear-gradient(#eae5ff, white)
-}
+
 .loginSection {
     display: flex;
     flex-direction: column;

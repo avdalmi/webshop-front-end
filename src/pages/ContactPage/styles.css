@@ -7,7 +7,7 @@ input[type=text], select, textarea {
     margin-top: 6px; 
     margin-bottom: 16px;
 }
-    
+
 
 input[type=submit] {
     background-color: purple;
@@ -24,12 +24,35 @@ input[type=submit] {
 
   .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: white;
     padding: 20px;
     width:50%;
-    margin: 0 auto;
+    margin: 50px auto;
+    
   }
   
   .contactInfo {
     text-align: center;
+    font-size: 16px;
+    font-family: "lato";
+    margin: 50px;
+  }
+
+  textarea {
+    font-family: "lato";
+    font-size: 12px;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  input[type=text] {
+    font-size: 12px;;
+  }
+
+  .selectPlc {
+    font-family: "lato";
+    font-size: 12px;
+
   }

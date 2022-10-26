@@ -1,6 +1,6 @@
 .cart {
     display: flex;
     background-color: rgb(175, 175, 245);
-    justify-content: flex-end;
+    
     height: 250px;
 }
