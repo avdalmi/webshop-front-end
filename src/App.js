@@ -7,6 +7,7 @@ import Shop from "./pages/Shop";
 import Footer from "./components/Footer";
 import ContactPage from "./pages/ContactPage";
 import Cart from "./pages/Cart";
+import LoginPage from "./pages/LoginPage";
 import { useState } from "react";
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
                         />
                     }
                 />
-                 <Route path="/login" element={ <LoginPage /> } />
+                <Route path="/login" element={<LoginPage />} />
             </Routes>
 
             {/* <Footer /> */}
