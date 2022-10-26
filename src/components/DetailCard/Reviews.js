@@ -1,8 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function Reviews() {
-  return (
-    <div>Reviews</div>
-  )
+function Reviews(p) {
+    console.log(p);
+    return <div>Reviews</div>;
 }
 export { Reviews };
