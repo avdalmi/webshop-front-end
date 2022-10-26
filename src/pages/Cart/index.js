@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import Product from "../../components/Cart/Product";
+import axios from "axios";
 import "./styles.css";
 
 function Cart(p) {
@@ -32,11 +33,22 @@ function Cart(p) {
             });
             return total.toFixed(2);
         };
+        const checkOut = () => {
+            console.log(shoppingCart);
+            const postData = async () => {
+                const productData = await axios.post(
+                    `http://localhost:4000/user/purchase`,
+                    { shoppingCart: shoppingCart }
+                );
+                return;
+            };
+            postData();
+        };
         return (
             <>
                 Total: {getTotalPrice()}
                 <br />
-                <button>Place order</button>
+                <button onClick={() => checkOut()}>Place order</button>
             </>
         );
     };

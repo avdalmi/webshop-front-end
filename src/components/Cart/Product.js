@@ -29,10 +29,12 @@ export default function Product(p) {
             }
             if (productInCart.count <= 1) {
                 const returnArray = shoppingCart;
-                const indexToRemove = returnArray.indexOf(productInCart);
-                returnArray.splice(indexToRemove, 1);
-                if (returnArray.length !== 0) {
-                    setShoppingCart(returnArray);
+                const newArray = returnArray.filter((i) => {
+                    if (i === productInCart) return false;
+                    return true;
+                });
+                if (newArray.length !== 0) {
+                    setShoppingCart(newArray);
                     return;
                 }
                 setShoppingCart(undefined);
