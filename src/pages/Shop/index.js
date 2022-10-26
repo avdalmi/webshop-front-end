@@ -30,6 +30,7 @@ function Shop() {
 
     useEffect(() => {
         getFilterState();
+        console.log(responseData);
     }, [categories]);
 
     const handleFilter = (p, e) => {
@@ -92,7 +93,7 @@ function Shop() {
                     title={data.title}
                     id={data.id}
                     key={data.id}
-                    image={data.mainImage}
+                    mainImage={data.mainImage}
                     price={data.price}
                     rating={data.rating}
                     description={data.description}
