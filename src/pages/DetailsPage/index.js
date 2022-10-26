@@ -10,7 +10,7 @@ import {
 import "./styles.scss";
 import { SocialIcon } from "react-social-icons";
 
-function DetailsPage() {
+function DetailsPage(p) {
     const [product, setProduct] = useState(undefined);
 
     //Retrieve productId
@@ -30,6 +30,42 @@ function DetailsPage() {
     useEffect(() => {
         getData();
     }, []);
+
+    //OnClick event of add to cart button
+    const addProduct = () => {
+        const { shoppingCart, setShoppingCart } = p;
+        console.log(shoppingCart);
+        const productToAdd = {
+            id: product.id,
+            image: product.mainImage,
+            title: product.title,
+            price: product.price,
+            count: 1,
+        };
+        if (!shoppingCart) {
+            setShoppingCart([productToAdd]);
+            return;
+        }
+        const productInCart = shoppingCart.find((i) => {
+            if (i.id === product.id) {
+                return true;
+            }
+        });
+        if (productInCart !== undefined) {
+            const newProduct = {
+                ...productInCart,
+                count: productInCart.count + 1,
+            };
+            setShoppingCart(
+                shoppingCart.map((i) => {
+                    if (i.id !== productInCart.id) return i;
+                    return newProduct;
+                })
+            );
+            return;
+        }
+        setShoppingCart([...shoppingCart, productToAdd]);
+    };
 
     //Display product based on productData
     const displayProduct = () => {
@@ -56,7 +92,10 @@ function DetailsPage() {
                         <div className="price">€{product.price}</div>
 
                         <div className="buttons">
-                            <button className="cartButton">
+                            <button
+                                className="cartButton"
+                                onClick={() => addProduct()}
+                            >
                                 <svg
                                     className="cartIcon"
                                     xmlns="http://www.w3.org/2000/svg"
