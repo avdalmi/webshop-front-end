@@ -1,3 +1,14 @@
+1. pagination
+2. banner
+3. login page
+4. shopping cart or adding/viewing reviews 
+5. orders 
+
+bonus:
+1. navbar - if already logged in the navbar should say logout instead od login 
+2. redirect to homepage after succcessfully login
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
