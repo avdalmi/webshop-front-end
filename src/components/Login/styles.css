@@ -1,0 +1,92 @@
+body {
+    background-image: linear-gradient(#eae5ff, white)
+}
+.loginSection {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50%;
+    margin: 150px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.logtitle{
+    display: flex;
+    justify-content: center;
+}
+
+.logHeader {
+    font-size: 32px;
+    font-weight: 700px;
+    font-family: "Lato";
+}
+
+.logText {
+    color: #9096B2;
+    font-size: 17px;
+    font-family: "Lato";
+}
+
+.inputEmail {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-family: "Lato";
+    font-size: 16px;
+    color: #9096B2;
+}
+
+.inputEmail input {
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    border-color: #9096B2;
+}
+
+.inputPwd {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputPwd input {
+    width: 78%;
+    height: 26px;
+    text-align: center;
+    border-color: #9096B2;
+    border-radius: 5px;
+}
+
+.forgotPwd {
+    font-family: "lato";
+    color: #9096B2;
+    font-size: 17px;
+}
+
+.signInBtn {
+    width: 80%;
+    background-color: #fb2e86;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+}
+
+.newAccount {
+    display: flex;
+
+}
+
+.newAccount p {
+   font-size: 17px;
+   color: #9096B2;
+   font-family: "lato"; 
+}
+
+.accountLink {
+    font-size: 17px;
+    color: #9096B2;
+    font-family: "lato";
+}
