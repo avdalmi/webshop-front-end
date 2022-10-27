@@ -5,6 +5,7 @@ import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import './styles.css';
 
 function Shop() {
     let [responseData, setResponseData] = useState([]);
@@ -60,14 +61,14 @@ function Shop() {
         if (!categories) return;
         const categoryNames = categories.map((i) => {
             return (
-                <div key={`${i.id}`}>
-                    <input
-                        key={`${i.id}`}
+                <div className="catItems" key={ `${i.id}` }>
+                    <input className="catCheckbox"
+                        key={ `${i.id}` }
                         type="checkbox"
-                        onChange={(e) => handleFilter(i, e.target.checked)}
-                        checked={handleCheck(i)}
+                        onChange={ (e) => handleFilter(i, e.target.checked) }
+                        checked={ handleCheck(i) }
                     ></input>
-                    <h3>{i.title}</h3>
+                    <h3 className="catItemTitle">{ i.title }</h3>
                 </div>
             );
         });
@@ -90,13 +91,13 @@ function Shop() {
             if (!filterState || filterState.filtered === false) return;
             return (
                 <ProductCard
-                    title={data.title}
-                    id={data.id}
-                    key={data.id}
-                    mainImage={data.mainImage}
-                    price={data.price}
-                    rating={data.rating}
-                    description={data.description}
+                    title={ data.title }
+                    id={ data.id }
+                    key={ data.id }
+                    mainImage={ data.mainImage }
+                    price={ data.price }
+                    rating={ data.rating }
+                    description={ data.description }
                 />
             );
         });
@@ -104,8 +105,17 @@ function Shop() {
     };
     return (
         <>
-            <div className="filter">{renderFilter()}</div>
-            <div className="products">{renderProductCards()}</div>
+            <Banner />
+            <div className="shopContainer">
+                <div className="catContainer">
+                    <h1 className="catTitle">Categories</h1>
+                    <div className="filter">{ renderFilter() }</div>
+                </div>
+
+                <div className="productContainer">
+                    <div className="products">{ renderProductCards() }</div>
+                </div>
+            </div>
         </>
     );
 }

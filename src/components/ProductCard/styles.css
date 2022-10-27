@@ -1,12 +1,90 @@
-.mainContainer {
+.productContainer {
     width: 650px;
     font-size: 16px;
 }
 
-.img {
-    width: 30px;
-}
-
 .iconContainer {
     width: 5%;
+}
+
+.catContainer {
+    margin-top: 30px;
+    width:200px;
+}
+
+.catTitle {
+    color: #151875;
+    font-size: 20px;
+    font-family: 'Crimson Text', serif;
+}
+.catItems {
+    display: flex;
+    font-size: 12px;
+    font-family: "Lato";
+    color: #7E81A2;
+}
+
+.catItemTitle {
+    padding:0px;
+    margin: 0px;
+}
+
+.productContainer {
+    display: flex;
+}
+
+.productsContainer {
+    background-color: white;
+    display: flex;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.shopContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.productImg {
+    width:25%;
+    height:5%;
+    display: flex;
+    border-radius: 15px;
+    align-self: center;
+}
+
+.productTitle {
+    font-family: "Crimson Text";
+    color: #111C85
+}
+
+.itemsContainer {
+    padding-left: 10px;
+}
+
+.iconContainer{
+    display: flex;
+}
+
+.productDescription {
+    color: #9295aa;
+    font-size: 16px;
+    font-family: "Lato";
+}
+
+.textRatingContainer {
+    display: flex;
+}
+
+.rating {
+    padding-left: 5px;
+}
+
+.productPrice {
+    color: #111C85;
+    font-family: "Lato";
+    font-size: 14px;
 }

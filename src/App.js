@@ -9,40 +9,42 @@ import ContactPage from "./pages/ContactPage";
 import Cart from "./pages/Cart";
 import LoginPage from "./pages/LoginPage";
 import { useState } from "react";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
     const [shoppingCart, setShoppingCart] = useState(undefined);
 
     return (
         <>
-            <NavBar shoppingCart={shoppingCart} />
+            <NavBar shoppingCart={ shoppingCart } />
 
             <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/shop" element={<Shop />} />
+                <Route path="/" element={ <Homepage /> } />
+                <Route path="/shop" element={ <Shop /> } />
                 <Route
                     path="/details/:id/*"
                     element={
                         <DetailsPage
-                            shoppingCart={shoppingCart}
-                            setShoppingCart={setShoppingCart}
+                            shoppingCart={ shoppingCart }
+                            setShoppingCart={ setShoppingCart }
                         />
                     }
                 />
-                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/contact" element={ <ContactPage /> } />
                 <Route
                     path="/cart"
                     element={
                         <Cart
-                            shoppingCart={shoppingCart}
-                            setShoppingCart={setShoppingCart}
+                            shoppingCart={ shoppingCart }
+                            setShoppingCart={ setShoppingCart }
                         />
                     }
                 />
-                <Route path="/login" element={<LoginPage />} />
+                <Route path="/login" element={ <LoginPage /> } />
+                <Route path="/register" element={ <RegisterPage /> } />
             </Routes>
 
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }

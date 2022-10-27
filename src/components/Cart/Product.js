@@ -83,16 +83,28 @@ export default function Product(p) {
         return (p.info.count * p.info.price).toFixed(2);
     };
     return (
-        <div key={p.info.id} className="product">
-            <button onClick={() => removeItem()}>-</button>
-            <button onClick={() => addItem()}>+</button>
-            <h1>
-                Total ({p.info.count}): €{calculateTotalCost()}
-            </h1>
-            <div className="image">
-                <img src={p.info.image} />
+        <div>
+
+            <div key={ p.info.id } className="cartDisplay">
+
+                <div className="cartImgs">
+                    <img className="cartImg" src={ p.info.image } />
+                </div>
+
+                <div className="cartInfoTitle">{ p.info.title }</div>
+
+                <div className="cartInfoPrice">€{ p.info.price }</div>
+
+                <div className="addBtns">
+                    <button className="addButton" onClick={ () => removeItem() }>-</button>
+                    <div className="countItem">{ p.info.count }</div>
+                    <button className="addButton" onClick={ () => addItem() }>+</button>
+                </div>
+                <div className="cartInfoPrice"> €{ calculateTotalCost() }</div>
             </div>
-            <h5>{p.info.title}</h5>
-        </div>
+            <hr className="cartLiner" />
+
+
+        </div >
     );
 }
