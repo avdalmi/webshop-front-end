@@ -1,0 +1,48 @@
+.reviewsContainer {
+    padding-bottom: 300px;
+}
+
+.addReviewTitle {
+    color: #0D134E;
+    font-family: "Lato";
+    font-size: 36px;;
+}
+
+.reviewContainer {
+    padding: 10px;
+    border-radius: 5px;
+}
+.revTitleCnt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hideReviewBtn {
+    margin-left:280px;
+    border: none;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-family: "Lato";
+}
+.numberInput {
+    width: 98%;
+    border: 1px solid #C2C5E1;
+    border-radius: 5px;
+}
+
+.submitBtn {
+    background-color: #fb2e86;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    width: 100px;
+
+    font-size: 16px;;
+}

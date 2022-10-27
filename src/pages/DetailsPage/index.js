@@ -10,8 +10,10 @@ import {
 import "./styles.scss";
 import { SocialIcon } from "react-social-icons";
 
+
 function DetailsPage(p) {
     const [product, setProduct] = useState(undefined);
+    const [showReview, setShowReview] = useState(false);
 
     //Retrieve productId
     const params = useParams();
@@ -67,6 +69,53 @@ function DetailsPage(p) {
         setShoppingCart([...shoppingCart, productToAdd]);
     };
 
+
+
+    //Display review input on detail page
+    const [reviews, setReviews] = useState([]);
+    const [stars, setStars] = useState(0);
+    const [message, setMessage] = useState('');
+
+    const { id } = useParams();
+
+    const getReviewData = () => {
+        const getReviewById = async () => {
+            const reviewData = await axios.get(`http://localhost:4000/review/all/${id}`);
+            // console.log(reviewData);
+            setReviews(reviewData.data);
+        };
+        getReviewById();
+    };
+
+    useEffect(() => {
+        getReviewData();
+    }, []);
+
+
+    const addReviewHandler = async (event) => {
+        event.preventDefault();
+
+        const reviewToAdd = {
+            id: reviews.id,
+            stars: stars,
+            message: message
+        };
+
+        await axios.post(`http://localhost:4000/review/${id}`, reviewToAdd);
+        // console.log("reviews to add:", reviewToAdd);
+        // console.log("reviews and sars", reviewToAdd.stars, reviewToAdd.message);
+        setMessage('');
+        setStars(0);
+    };
+
+
+
+    const displayReviewsEvent = (event) => {
+        setShowReview(true);
+    };
+    const hideReviewsEvent = (event) => {
+        setShowReview(false);
+    };
     //Display product based on productData
     const displayProduct = () => {
         if (!product) {
@@ -79,29 +128,73 @@ function DetailsPage(p) {
         return (
             <>
                 <div className="containerDes">
-                    <img className="photo" src={product.mainImage} />
+                    <img className="photo" src={ product.mainImage } />
 
                     <div className="description">
-                        <div className="title">{product.title}</div>
+                        <div className="title">{ product.title }</div>
 
                         <div className="reviews">
-                            <div className="rating">{product.rating}</div>
-                            <button className="reviewButton">Add Review</button>
+                            <div className="rating">{ product.rating }</div>
+                            <button onClick={ displayReviewsEvent } className="reviewButton">Add Review</button>
+
+                            { showReview && (
+                                <div className="reviewContainer">
+                                    <form onSubmit={ addReviewHandler }>
+
+                                        <div className="revTitleCnt">
+                                            <button onClick={ hideReviewsEvent } class="hideReviewBtn">x</button>
+                                            <h1 className="addReviewTitle">Add Review</h1>
+                                        </div>
+                                        {/* <label htmlFor="review">Name</label>
+                                <input
+                                    type="text"
+                                    id="review"
+                                    required
+                                /> */}
+                                        <label htmlFor="review">Rating</label>
+                                        <br />
+                                        <input
+                                            type="number"
+                                            id="stars"
+                                            required
+                                            max="5"
+                                            min="1"
+                                            value={ stars }
+                                            onChange={ (event) => setStars(event.target.value) }
+                                            className="numberInput"
+                                        />
+                                        <br />
+                                        <label htmlFor="message">Review</label>
+                                        <br />
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            placeholder='Write a review...'
+                                            required
+                                            value={ message }
+                                            onChange={ (event) => setMessage(event.target.value) }
+                                        />
+                                        <br />
+                                        <button className="submitBtn" type="submit">Submit</button>
+                                    </form>
+                                </div>
+                            ) }
+
                         </div>
 
-                        <div className="price">€{product.price}</div>
+                        <div className="price">€{ product.price }</div>
 
                         <div className="buttons">
                             <button
                                 className="cartButton"
-                                onClick={() => addProduct()}
+                                onClick={ () => addProduct() }
                             >
                                 <svg
                                     className="cartIcon"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
+                                    strokeWidth={ 1.5 }
                                     stroke="currentColor"
                                 >
                                     <path
@@ -119,7 +212,7 @@ function DetailsPage(p) {
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
+                                    strokeWidth={ 1.5 }
                                     stroke="currentColor"
                                 >
                                     <path
@@ -133,7 +226,7 @@ function DetailsPage(p) {
                         </div>
 
                         <div className="category">
-                            Category: {product.category.title}
+                            Category: { product.category.title }
                         </div>
 
                         <div className="socialsShop">
@@ -142,19 +235,19 @@ function DetailsPage(p) {
                                 className="sicon"
                                 url="https://facebook.com"
                                 bgColor="#000000"
-                                style={{ maxHeight: 20, width: 20 }}
+                                style={ { maxHeight: 20, width: 20 } }
                             />
                             <SocialIcon
                                 className="sicon"
                                 url="https://instagram.com"
                                 bgColor="#000000"
-                                style={{ maxHeight: 20, width: 20 }}
+                                style={ { maxHeight: 20, width: 20 } }
                             />
                             <SocialIcon
                                 className="sicon"
                                 url="https://twitter.com"
                                 bgColor="#000000"
-                                style={{ maxHeight: 20, width: 20 }}
+                                style={ { maxHeight: 20, width: 20 } }
                             />
                         </div>
                     </div>
@@ -168,34 +261,38 @@ function DetailsPage(p) {
                         <Link to="info" className="displayLinks">
                             Additional Info
                         </Link>
-                        <Link to="reviews" className="displayLinks">
+                        <Link to="reviews/all" className="displayLinks">
                             Review
                         </Link>
                     </div>
                     <Routes>
                         <Route
-                            path={`/`}
+                            path={ `/` }
                             element={
                                 <Description
                                     className="routeLink"
-                                    description={product.description}
+                                    description={ product.description }
                                 />
                             }
                         />
                         <Route
                             path="/info"
-                            element={<AdditionalInfo className="routeLink" />}
+                            element={ <AdditionalInfo className="routeLink" /> }
                         />
                         <Route
-                            path="/reviews"
-                            element={<Reviews className="routeLink" />}
+                            path="/reviews/all"
+                            element={
+                                <Reviews
+                                    className="routeLink"
+                                    reviews={ reviews }
+                                /> }
                         />
                     </Routes>
                 </div>
             </>
         );
     };
-    return <div>{displayProduct()}</div>;
+    return <div>{ displayProduct() }</div>;
 }
 
 export default DetailsPage;
