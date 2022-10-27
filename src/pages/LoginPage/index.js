@@ -8,7 +8,6 @@ function LoginPage() {
 
         <>
             <Login />
-            <Footer />
         </>
     );
 }

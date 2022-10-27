@@ -1,3 +1,9 @@
+body {
+  background: rgb(234,229,255);
+background: linear-gradient(180deg, rgba(234,229,255,1) 0%, rgba(255,255,255,1) 55%);
+}
+
+
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;

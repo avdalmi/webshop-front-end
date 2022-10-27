@@ -9,7 +9,7 @@ import ContactPage from "./pages/ContactPage";
 import Cart from "./pages/Cart";
 import LoginPage from "./pages/LoginPage";
 import { useState } from "react";
-import NewAccountPage from "./pages/NewAccountPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
     const [shoppingCart, setShoppingCart] = useState(undefined);
@@ -41,10 +41,10 @@ function App() {
                     }
                 />
                 <Route path="/login" element={ <LoginPage /> } />
-                <Route path="/register" element={ <NewAccountPage /> } />
+                <Route path="/register" element={ <RegisterPage /> } />
             </Routes>
 
-            {/* <Footer /> */ }
+            <Footer />
         </>
     );
 }

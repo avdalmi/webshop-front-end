@@ -1,21 +1,202 @@
-.product {
+ .cartImg {
+    width: 138px;
     display: flex;
-    border: 1px solid;
-    border-radius: 12%;
-    width: 20%;
+    border-radius: 15px;;
+    max-height: 200px;
+} 
+.cartImgs {
+    display: flex;
+    align-items: center;
 }
 
-img {
-    margin-left: 15%;
-    border: 1px solid;
-    border-radius: 50%;
+.cartHeader {
+    font-family: "Lato";
+    font-size: 36px;
+    color: #0D134E;
+    margin-left: 30px;;
+}
+
+.cartTitles {
+    display: flex;
+}
+
+
+.checkoutContainer {
+    background: rgb(244,244,252);
+background: linear-gradient(0deg, rgba(244,244,252,1) 78%, rgba(255,255,255,1) 100%);
+    width: 300px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;;
+}
+
+.checkoutContainer h1{
+    color: #1D3178;
+    font-family: "Lato";
+    font-size: 20px;
+}
+.numContainer {
+    display: flex;
+    flex-direction: column;
+    color: #1D3178;
+    width:80%;
+    font-family: "Lato";
+    font-size: 18px;
+}
+
+.cartButton {
     width: 100%;
-    height: 100%;
+    background-color: #19D16F;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 40px;
 }
 
-h5 {
-    font-size: 10px;
-    margin-top: 55%;
-    width: 25%;
-    height: 25%;
+.sepNum {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shipping {
+    color: #8A91AB;
+    font-family: "Lato";
+    font-size: 12px;
+}
+
+.cartLine {
+    border: 1px solid #E8E6F1;
+    border-radius: 5px;
+    width: 100%
+}
+
+.cartDisplay {
+    display: flex;
+    margin: 20px;
+    height: 200px;
+    width: 800px;
+    border-radius: 15px;;
+}
+
+.cartTitles{
+    width: 900px;
+    font-family: "Lato";
+    font-size: 20px;
+    color:#1D3178;
+    margin-bottom: -30px;
+}
+
+.cartInfoTitle {
+    font-family: "Lato";
+    font-size: 14px;;
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+    margin: 0 40px;
+    flex-wrap: wrap;
+    min-width: 150px;
+}
+
+.cartMainContainer {
+    display: flex;
+}
+
+.addButton {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    border-color: white;
+    background-color: #E7E7EF;
+    border: none;
+    color: #BEBFC2;
+}
+
+.cartInfoPrice {
+    font-size: 14px;
+    font-family: "Lato";
+    color: #15245E;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.addBtns {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-right: 50px;
+}
+
+.titlePrice{
+    margin-left: 155px;
+}
+
+.titleProduct {
+    margin-left: 200px;
+}
+
+.titleQuantity {
+    margin-left: 75px;
+}
+
+.titleTotal {
+    margin-left: 75px;
+}
+
+.cartLiner {
+    border: 1px solid #E1E1E4;
+    border-radius: 5px;
+    width: 100%
+}
+
+.countItem {
+    background-color: #F0EFF2;
+    font-size: 16.5px;
+    font-family: "Lato";
+    color:#BEBFC2;
+    width: 35px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uptBtn {
+        background-color: #fb2e86;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        height: 40px;
+        width: 130px;
+}
+.clrBtn {
+    background-color: #fb2e86;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        height: 40px;
+        width: 130px;
+}
+
+.updateBtn {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+.mainCrtC {
+    width: 90%;
+    margin: 10px;
+}
+
+.noItemsCart {
+    font-size: 16px;
+    margin: 150px;
+    font-family: "Lato";
 }
